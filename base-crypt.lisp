@@ -1,6 +1,6 @@
 ;;;; This program should create crypt message with bases
 
-(defvar *alpha*
+(defparameter *alpha*
   (concatenate 'string (loop for i from 32 to 126 collect (code-char i)))
   "the dictionary of letters")
 
@@ -40,11 +40,11 @@ which is a number in given base."
 (defun initialize-functions ()
   (let ((mode (init-mode))
         (key (init-key)))
-    (defvar input->decimal
+    (defparameter input->decimal
       (create-base-to-decimal-function (if (equal mode "c")
                                            *alpha*
                                            (subseq *alpha* 0 key))))
-    (defvar decimal->output
+    (defparameter decimal->output
       (create-decimal-to-base-function (if (equal mode "c")
                                            (subseq *alpha* 0 key)
                                            *alpha*)))))
@@ -58,7 +58,7 @@ which is a number in given base."
           (init-mode)))))
 
 (defun init-key ()
-  (let ((key (parse-integer (prompt-read "Insert key (0 < n < 94)") :junk-allowed t)))
+  (let ((key (parse-integer (prompt-read "Insert key (0 < n < 95)") :junk-allowed t)))
     (if (and (numberp key)
              (< 0 key (length *alpha*)))
         key
