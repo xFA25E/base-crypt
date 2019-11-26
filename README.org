@@ -22,4 +22,4 @@ Simple crypto-algorithm that uses number bases to crypt message
 
   Our messages are just numbers in some base. By changing number bases, we alter
   our message. We just use larger bases (like 95, all ascii printable
-  characters).
+  characters). So, key is a combination of alphabet, old base and new base.
