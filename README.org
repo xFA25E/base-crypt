@@ -1,0 +1,25 @@
+#+TITLE: Base Crypt
+
+Simple crypto-algorithm that uses number bases to crypt message
+* Example
+  The best way to understand this is through hex numbers.
+
+  base-16 alphabet: =0123456789abcdf=
+
+  base-16 message: =bad=
+
+  Now we change number base, from 16 to 10 (decimal)
+
+  base-10 alphabet: =0123456789=
+
+  base-10 result: =2989=
+
+  Or, from 16 to 8 (octal)
+
+  base-8 alphabet: =01234567=
+
+  base-8 result: =5655=
+
+  Our messages are just numbers in some base. By changing number bases, we alter
+  our message. We just use larger bases (like 95, all ascii printable
+  characters).
